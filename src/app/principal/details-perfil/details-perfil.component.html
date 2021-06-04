@@ -1,4 +1,4 @@
-
+<!--DATA:{{listusernew | json}}-->
 <!----------prueba post----->
 <div class="container p-3">
     <div class="row p-3">
@@ -18,8 +18,15 @@
             </tr>
         </thead>
         <tbody class="bg-white" >
-            <tr *ngFor="let dato of respuser">
+            <tr *ngFor="let dato of listusernew">
                 <td class="text-center">{{dato.name}}</td>
+                <td class="text-center">{{dato.address.street}}</td>
+                <td class="text-center">{{dato.address.city}}</td>
+                <td class="text-center">{{dato.phone}}</td>
+                <td class="text-center">{{dato.website}}</td>
+                <td class="text-center">{{dato.company.name}}</td>
+                <!--<td class="text-center">{{respuser?.name}}</td>-->
+
                 
             </tr>
         </tbody>

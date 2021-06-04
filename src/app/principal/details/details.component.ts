@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
+import { RequestPost } from 'src/app/models/interface-post';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class DetailsComponent implements OnInit {
 
-  public resp:any=[];
+  
+  public lsitapostnew : any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -21,15 +23,24 @@ export class DetailsComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((paramMap:any) =>{
       const {params}=paramMap
       console.log(params.variable);
-      this.cargardatapost(params.variable);
+      //this.cargardatapost(params.variable);
+      this.getPost(parseInt(params.variable));
     })
     
   }
-
+/*
   cargardatapost(id:string){
     this.postlistService.getpost(`https://jsonplaceholder.typicode.com/posts?userId=${id}`).subscribe(resp =>{
       this.resp=resp;
   })
+  }
+*/
+  getPost(id:number){
+    this.postlistService.getpost('https://jsonplaceholder.typicode.com/posts/')
+    .subscribe((resp: RequestPost[]) => {
+      this.lsitapostnew=resp.filter((e)=> e.userId===id);
+      console.log(this.lsitapostnew)
+      })
   }
 
   Regresar(){

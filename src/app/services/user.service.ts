@@ -10,9 +10,9 @@ export class UserService {
   constructor(private http:HttpClient) { }
   
   public getuser(url:string){
-    return this.http.get(url);
+    return this.http.get<RequestUser[]>(url);
   }
   public getuserdatos(url:string){
-    return this.http.get<RequestUser[]>(url);
+    return this.http.get<RequestUser>(url);
   }
 }

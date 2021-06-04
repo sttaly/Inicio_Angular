@@ -1,4 +1,4 @@
-DATA:{{resp | json}}
+<!--DATA:{{lsitapostnew | json}}-->
 
     <!----------prueba post----->
     <div class="container p-3">
@@ -17,7 +17,7 @@ DATA:{{resp | json}}
                 </tr>
             </thead>
             <tbody class="bg-white" >
-                <tr *ngFor="let datoxid of resp">
+                <tr *ngFor="let datoxid of lsitapostnew">
                     <td class="text-center">{{datoxid.userId}}</td>
                     <td class="text-center">{{datoxid.id}}</td>
                     <td class="text-left">{{datoxid.title}}</td>

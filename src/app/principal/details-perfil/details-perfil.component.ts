@@ -10,30 +10,42 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DetailsPerfilComponent implements OnInit {
 
-  public respuser:any=[];
+  public respuser?:RequestUser;
+  public listusernew:any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private router:Router,
     private listuserservice: UserService,
-  ) { }
+  ) {}
 
   ngOnInit(): void {
 
     this.activatedRoute.paramMap.subscribe((paramMap:any) =>{
       const {params}=paramMap
       console.log(params.variable);
-      this.cargardatauser(params.variable);
+      //this.cargardatauser(params.variable);
+      this.getUser(parseInt(params.variable));
+
       
     })
 
   }
-
+/*
   cargardatauser(id:string){
-    this.listuserservice.getuserdatos(`https://jsonplaceholder.typicode.com/users/${id}`).subscribe((respUser:RequestUser[]) =>{
-      this.respuser=Object.values(respUser) ;
-      console.log(this.respuser[2])
+    this.listuserservice.getuserdatos(`https://jsonplaceholder.typicode.com/users/${id}`)
+    .subscribe((respUser:RequestUser) =>{
+      this.respuser=respUser ;
+      console.log(respUser)
   })
+  }
+  */
+  getUser(id:number){
+    this.listuserservice.getuser('https://jsonplaceholder.typicode.com/users/')
+    .subscribe((resp:RequestUser[]) => {
+    this.listusernew=resp.filter((e)=> e.id===id);
+    console.log(this.listusernew)
+    })
   }
 
 

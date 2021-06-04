@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { RequestPost } from '../models/interface-post';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class PostService {
   }
 
   public getpost(url:string){
-    return this.http.get(url);
+    return this.http.get<RequestPost[]>(url);
   }
   /*
   cargarPost(){
