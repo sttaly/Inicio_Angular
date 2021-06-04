@@ -1,0 +1,31 @@
+    <!----------prueba post----->
+    <div class="container p-3">
+        <div class="row p-3">
+            <div class="col-12 justify-align-end">
+                <button class="btn btn-primary" (click)="Regresar()">Atrás</button>
+            </div>
+        </div>
+        <table class="table mx-4 ">
+            <thead class="rounded-top">
+                <tr>
+                    <th class="gray text-center" style="border-top-style: none;">ID</th>
+                    <th class="gray text-center" style="border-top-style: none;">TITLE</th>
+                    <th class="gray text-center" style="border-top-style: none;">NAVEGACION POR ID</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white " >
+                <tr *ngFor="let post of listPost">
+                            <td class="text-center">{{post.id}}</td>
+                            <td class="text-left">{{post.title}}</td>
+                            <td class="text-center">
+                                <button class="text-white btn mx-0 btn-primary">
+                                    <i class="far fa-edit">hola</i>
+                                </button>
+                            </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    
+    </div>
+    

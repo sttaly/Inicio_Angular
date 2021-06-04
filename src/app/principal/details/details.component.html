@@ -1,0 +1,30 @@
+DATA:{{resp | json}}
+
+    <!----------prueba post----->
+    <div class="container p-3">
+        <div class="row p-3">
+            <div class="col-12 justify-align-end">
+                <button class="btn btn-primary" (click)="Regresar()">Atrás</button>
+            </div>
+        </div>
+        <table class="table mx-4 ">
+            <thead class="rounded-top bg-dark text-white">
+                <tr >
+                    <th class="gray text-center" style="border-top-style: none;">USERID</th>
+                    <th class="gray text-center" style="border-top-style: none;">ID</th>
+                    <th class="gray text-left" style="border-top-style: none;">TITLE</th>
+                    <th class="gray text-left" style="border-top-style: none;">BODY</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white" >
+                <tr *ngFor="let datoxid of resp">
+                    <td class="text-center">{{datoxid.userId}}</td>
+                    <td class="text-center">{{datoxid.id}}</td>
+                    <td class="text-left">{{datoxid.title}}</td>
+                    <td class="text-left">{{datoxid.body}}</td>
+                </tr>
+            </tbody>
+        </table>
+    
+    </div>
+    

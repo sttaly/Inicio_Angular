@@ -1,0 +1,28 @@
+
+<!----------prueba post----->
+<div class="container p-3">
+    <div class="row p-3">
+        <div class="col-12 justify-align-end">
+            <button class="btn btn-primary" (click)="Regresar()">Atrás</button>
+        </div>
+    </div>
+    <table class="table mx-4 ">
+        <thead class="rounded-top bg-dark text-white">
+            <tr >
+                <th class="gray text-center" style="border-top-style: none;">NAME</th>
+                <th class="gray text-center" style="border-top-style: none;">STREET</th>
+                <th class="gray text-left" style="border-top-style: none;">CITY</th>
+                <th class="gray text-left" style="border-top-style: none;">PHONE</th>
+                <th class="gray text-left" style="border-top-style: none;">WEBSITE</th>
+                <th class="gray text-left" style="border-top-style: none;">COMPANY</th>
+            </tr>
+        </thead>
+        <tbody class="bg-white" >
+            <tr *ngFor="let dato of respuser">
+                <td class="text-center">{{dato.name}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+
+</div>

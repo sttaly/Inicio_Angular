@@ -1,0 +1,40 @@
+<div class="container p-3">
+    <div class="row p-3">
+        <div class="col-12 justify-align-end">
+            <button class="btn btn-primary" (click)="Regresar()">Atrás</button>
+        </div>
+    </div>
+     <!----------prueba user----->
+     <table class="table mx-4 table--no-border">
+        <thead class="rounded-top">
+            <tr>
+                <th class="gray text-center" style="border-top-style: none;">ID</th>
+                <th class="gray text-center" style="border-top-style: none;">NAME</th>
+                <th class="gray text-center" style="border-top-style: none;">USERNAME</th>
+                <th class="gray text-center" style="border-top-style: none;">EMAIL</th>
+                <th class="gray text-center" style="border-top-style: none;">POST</th>
+                <th class="gray text-center" style="border-top-style: none;">POST</th>
+            </tr>
+        </thead>
+        <tbody class="bg-white " >
+            <tr *ngFor="let user of listUser">
+                        <td class="text-center">{{user.id}}</td>
+                        <td class="text-left">{{user.name}}</td>
+                        <td class="text-left">{{user.username}}</td>
+                        <td class="text-left">{{user.email}}</td>
+                        <td class="text-center">
+                            <button class="text-white btn mx-0 btn-primary" [routerLink]="['/','details',user.id]">
+                                1
+                            </button>
+                        </td>
+                        <td class="text-center">
+                            <button class="text-white btn mx-0 btn-primary" [routerLink]="['/','details-perfil',user.id]">
+                                2
+                            </button>
+                        </td>
+                
+            </tr>
+        </tbody>
+    </table>
+    <!--------------------->
+</div>
